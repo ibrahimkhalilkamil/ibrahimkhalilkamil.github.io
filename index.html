@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@
     <meta property="og:type" content="website">
 
     <!-- Google Fonts & FontAwesome 6 -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
@@ -70,6 +70,10 @@
                 radial-gradient(at 0% 0%, var(--radial-1) 0px, transparent 50%),
                 radial-gradient(at 100% 100%, var(--radial-2) 0px, transparent 50%);
             background-attachment: fixed;
+        }
+
+        html[dir="rtl"] body {
+            font-family: 'Noto Sans Arabic', 'Plus Jakarta Sans', sans-serif;
         }
 
         .container {
@@ -149,28 +153,30 @@
             box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
         }
 
-        /* Theme Toggle Button */
-        .theme-toggle-btn {
+        /* Theme & Lang Toggle Buttons */
+        .control-btn {
             background: var(--btn-social-bg);
             border: 1px solid var(--card-border);
             color: var(--text-primary);
-            width: 42px;
             height: 42px;
+            padding: 0 12px;
             border-radius: 12px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            gap: 6px;
         }
 
-        .theme-toggle-btn:hover {
+        .control-btn:hover {
             border-color: var(--accent-blue);
             color: var(--accent-blue);
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
 
-        /* Page Content Views Control */
+        /* Page Content Views */
         .page-tab-content {
             display: none;
             animation: fadeIn 0.4s ease-in-out;
@@ -437,11 +443,15 @@
         </div>
         <div class="nav-controls">
             <ul class="nav-links">
-                <li><button class="nav-tab-btn active" id="tabBtn-bio" onclick="switchTab('bio')"><i class="fa-solid fa-user"></i> Bio / السيرة</button></li>
-                <li><button class="nav-tab-btn" id="tabBtn-software" onclick="switchTab('software')"><i class="fa-solid fa-download"></i> Software / برامج للتنزيل</button></li>
+                <li><button class="nav-tab-btn active" id="tabBtn-bio" onclick="switchTab('bio')"><i class="fa-solid fa-user"></i> <span data-key="nav-bio">Bio</span></button></li>
+                <li><button class="nav-tab-btn" id="tabBtn-software" onclick="switchTab('software')"><i class="fa-solid fa-download"></i> <span data-key="nav-software">Software</span></button></li>
             </ul>
+            <!-- Language Switch Button -->
+            <button class="control-btn" id="langToggle" title="Switch Language">
+                <i class="fa-solid fa-globe"></i> <span id="langLabel">AR</span>
+            </button>
             <!-- Theme Toggle Button -->
-            <button class="theme-toggle-btn" id="themeToggle" title="Toggle Light/Dark Mode">
+            <button class="control-btn" id="themeToggle" title="Toggle Light/Dark Mode">
                 <i class="fa-solid fa-sun" id="themeIcon"></i>
             </button>
         </div>
@@ -454,9 +464,9 @@
             <div class="profile-img-container">
                 <img src="profile.jpg" alt="Ibrahim Khalil Kamil - إبراهيم خليل كامل" class="profile-img">
             </div>
-            <h1 class="hero-title">MSc. Ibrahim Khalil Kamil</h1>
-            <h2 class="hero-subtitle">إبراهيم خليل كامل</h2>
-            <p class="hero-desc">
+            <h1 class="hero-title" data-key="hero-title">MSc. Ibrahim Khalil Kamil</h1>
+            <h2 class="hero-subtitle" data-key="hero-subtitle">إبراهيم خليل كامل</h2>
+            <p class="hero-desc" data-key="hero-desc">
                 Lecturer at Al-Hadi University College | Control & Systems Engineering Researcher.<br>
                 Specialized in Modeling & Simulation, Embedded Hardware Systems, and Software Development.
             </p>
@@ -480,9 +490,9 @@
         <!-- About Section -->
         <div class="glass-section">
             <div class="section-header">
-                <i class="fa-solid fa-microchip"></i> About & Research Focus
+                <i class="fa-solid fa-microchip"></i> <span data-key="about-title">About & Research Focus</span>
             </div>
-            <p style="color: var(--text-secondary);">
+            <p style="color: var(--text-secondary);" data-key="about-body">
                 Academic lecturer and systems researcher focusing on digital control theory, dynamic system simulations, and embedded hardware development. Experienced in designing advanced user interfaces for embedded systems, prototyping physical 3D models, and implementing wireless power transfer (WPT) circuits.
             </p>
         </div>
@@ -490,11 +500,11 @@
         <!-- Skills & Tech Stack -->
         <div class="glass-section">
             <div class="section-header">
-                <i class="fa-solid fa-layer-group"></i> Skills & Tech Stack
+                <i class="fa-solid fa-layer-group"></i> <span data-key="skills-title">Skills & Tech Stack</span>
             </div>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3><i class="fa-solid fa-code"></i> Programming & Web</h3>
+                    <h3><i class="fa-solid fa-code"></i> <span data-key="skill-cat-1">Programming & Web</span></h3>
                     <div class="skill-tags">
                         <span class="tag">C++</span>
                         <span class="tag">C</span>
@@ -505,7 +515,7 @@
                 </div>
 
                 <div class="skill-category">
-                    <h3><i class="fa-solid fa-chart-line"></i> Simulation & Analysis</h3>
+                    <h3><i class="fa-solid fa-chart-line"></i> <span data-key="skill-cat-2">Simulation & Analysis</span></h3>
                     <div class="skill-tags">
                         <span class="tag">MATLAB</span>
                         <span class="tag">Simulink</span>
@@ -515,7 +525,7 @@
                 </div>
 
                 <div class="skill-category">
-                    <h3><i class="fa-solid fa-robot"></i> Embedded & Hardware</h3>
+                    <h3><i class="fa-solid fa-robot"></i> <span data-key="skill-cat-3">Embedded & Hardware</span></h3>
                     <div class="skill-tags">
                         <span class="tag">Arduino</span>
                         <span class="tag">Raspberry Pi</span>
@@ -526,7 +536,7 @@
                 </div>
 
                 <div class="skill-category">
-                    <h3><i class="fa-solid fa-cubes"></i> Prototyping & Design</h3>
+                    <h3><i class="fa-solid fa-cubes"></i> <span data-key="skill-cat-4">Prototyping & Design</span></h3>
                     <div class="skill-tags">
                         <span class="tag">3D Design & CAD</span>
                         <span class="tag">3D Printing</span>
@@ -539,25 +549,25 @@
         <!-- Featured Repositories -->
         <div class="glass-section">
             <div class="section-header">
-                <i class="fa-solid fa-code-branch"></i> Featured Repositories & Systems
+                <i class="fa-solid fa-code-branch"></i> <span data-key="repos-title">Featured Repositories & Systems</span>
             </div>
             <div class="projects-grid">
                 <div class="project-card">
                     <div>
                         <h3><a href="https://github.com/ibrahimkhalilkamil/student-results" target="_blank" style="color: var(--accent-blue); text-decoration: none;">student-results</a></h3>
-                        <p>Automated Python program designed for parsing unorganized academic Excel sheets and transferring scores into structured templates.</p>
+                        <p data-key="repo-1-desc">Automated Python program designed for parsing unorganized academic Excel sheets and transferring scores into structured templates.</p>
                     </div>
                 </div>
                 <div class="project-card">
                     <div>
                         <h3><a href="https://github.com/ibrahimkhalilkamil/MATLAB-Digital-Control-and-PID" target="_blank" style="color: var(--accent-blue); text-decoration: none;">MATLAB Control Systems</a></h3>
-                        <p>Digital control systems simulations, state-space representations, PID tuning models, and robustness analyses.</p>
+                        <p data-key="repo-2-desc">Digital control systems simulations, state-space representations, PID tuning models, and robustness analyses.</p>
                     </div>
                 </div>
                 <div class="project-card">
                     <div>
                         <h3><a href="https://github.com/ibrahimkhalilkamil/Arduino-Wireless-Power-Receiver" target="_blank" style="color: var(--accent-blue); text-decoration: none;">Wireless Power Receiver</a></h3>
-                        <p>Hardware realization and embedded control code for a 13.56 MHz wireless power reception unit.</p>
+                        <p data-key="repo-3-desc">Hardware realization and embedded control code for a 13.56 MHz wireless power reception unit.</p>
                     </div>
                 </div>
             </div>
@@ -566,12 +576,12 @@
         <!-- Institutional Info -->
         <div class="glass-section">
             <div class="section-header">
-                <i class="fa-solid fa-building-columns"></i> Academic Affiliation & Identity
+                <i class="fa-solid fa-building-columns"></i> <span data-key="affiliation-title">Academic Affiliation & Identity</span>
             </div>
             <div class="contact-list">
-                <p><strong>Institution:</strong> Al-Hadi University College (كلية الهادي الجامعة)</p>
-                <p><strong>Verified Academic Domain:</strong> huc.edu.iq</p>
-                <p><strong>Official Handle:</strong> @ibrahimkhalilkamil</p>
+                <p><strong data-key="affil-inst-label">Institution:</strong> <span data-key="affil-inst-val">Al-Hadi University College (كلية الهادي الجامعة)</span></p>
+                <p><strong data-key="affil-domain-label">Verified Academic Domain:</strong> <span>huc.edu.iq</span></p>
+                <p><strong data-key="affil-handle-label">Official Handle:</strong> <span>@ibrahimkhalilkamil</span></p>
             </div>
         </div>
     </div>
@@ -580,39 +590,29 @@
     <div id="view-software" class="page-tab-content">
         <div class="glass-section">
             <div class="section-header">
-                <i class="fa-solid fa-cloud-arrow-down"></i> Engineering Software & Academic Downloads / برامج وموارد للتنزيل
+                <i class="fa-solid fa-cloud-arrow-down"></i> <span data-key="software-header">Engineering Software & Academic Downloads</span>
             </div>
-            <p style="color: var(--text-secondary); margin-bottom: 25px;">
+            <p style="color: var(--text-secondary); margin-bottom: 25px;" data-key="software-sub">
                 Direct access to engineering simulation packages, IDE tools, standalone scripts, and academic resources developed or curated for students and research laboratories.
             </p>
             <div class="projects-grid">
                 <div class="project-card">
                     <div>
-                        <h3><i class="fa-solid fa-calculator"></i> MATLAB & Simulink Toolkits</h3>
-                        <p>Curated simulation toolkits, control system models, and digital filter design packages for engineering students and researchers.</p>
+                        <h3><i class="fa-solid fa-calculator"></i> <span data-key="soft-1-title">MATLAB & Simulink Toolkits</span></h3>
+                        <p data-key="soft-1-desc">Curated simulation toolkits, control system models, and digital filter design packages for engineering students and researchers.</p>
                     </div>
                     <a href="https://github.com/ibrahimkhalilkamil/MATLAB-Digital-Control-and-PID" target="_blank" class="dl-btn">
-                        <i class="fa-solid fa-file-arrow-down"></i> Download / Access Link
+                        <i class="fa-solid fa-file-arrow-down"></i> <span data-key="dl-btn-1">Download / Access Link</span>
                     </a>
                 </div>
 
                 <div class="project-card">
                     <div>
-                        <h3><i class="fa-solid fa-microchip"></i> Arduino & Nextion IDE Packages</h3>
-                        <p>Development packages, HMI designer tools for Nextion displays, and essential library setups for embedded hardware projects.</p>
+                        <h3><i class="fa-solid fa-microchip"></i> <span data-key="soft-2-title">Arduino & Nextion IDE Packages</span></h3>
+                        <p data-key="soft-2-desc">Development packages, HMI designer tools for Nextion displays, and essential library setups for embedded hardware projects.</p>
                     </div>
-                    <a href="https://github.com/ibrahimkhalilkamil" target="_blank" class="dl-btn">
-                        <i class="fa-solid fa-download"></i> Download IDE Package
-                    </a>
-                </div>
-
-                <div class="project-card">
-                    <div>
-                        <h3><i class="fa-solid fa-file-excel"></i> Student Results Parser Tool</h3>
-                        <p>Standalone Python executable for automated grade extraction and spreadsheet formatting for university faculty.</p>
-                    </div>
-                    <a href="https://github.com/ibrahimkhalilkamil/student-results" target="_blank" class="dl-btn">
-                        <i class="fa-solid fa-box-archive"></i> Download Executable
+                    <a href="#" target="_blank" class="dl-btn">
+                        <i class="fa-solid fa-download"></i> <span data-key="dl-btn-2">Download IDE Package</span>
                     </a>
                 </div>
             </div>
@@ -624,8 +624,99 @@
     </footer>
 </div>
 
-<!-- Tabs & Theme Script -->
+<!-- JavaScript for Language Switch, Tabs, and Theme -->
 <script>
+    // Dictionary Translations
+    const translations = {
+        en: {
+            "nav-bio": "Bio",
+            "nav-software": "Software",
+            "hero-title": "MSc. Ibrahim Khalil Kamil",
+            "hero-subtitle": "إبراهيم خليل كامل",
+            "hero-desc": "Lecturer at Al-Hadi University College | Control & Systems Engineering Researcher.<br>Specialized in Modeling & Simulation, Embedded Hardware Systems, and Software Development.",
+            "about-title": "About & Research Focus",
+            "about-body": "Academic lecturer and systems researcher focusing on digital control theory, dynamic system simulations, and embedded hardware development. Experienced in designing advanced user interfaces for embedded systems, prototyping physical 3D models, and implementing wireless power transfer (WPT) circuits.",
+            "skills-title": "Skills & Tech Stack",
+            "skill-cat-1": "Programming & Web",
+            "skill-cat-2": "Simulation & Analysis",
+            "skill-cat-3": "Embedded & Hardware",
+            "skill-cat-4": "Prototyping & Design",
+            "repos-title": "Featured Repositories & Systems",
+            "repo-1-desc": "Automated Python program designed for parsing unorganized academic Excel sheets and transferring scores into structured templates.",
+            "repo-2-desc": "Digital control systems simulations, state-space representations, PID tuning models, and robustness analyses.",
+            "repo-3-desc": "Hardware realization and embedded control code for a 13.56 MHz wireless power reception unit.",
+            "affiliation-title": "Academic Affiliation & Identity",
+            "affil-inst-label": "Institution:",
+            "affil-inst-val": "Al-Hadi University College",
+            "affil-domain-label": "Verified Academic Domain:",
+            "affil-handle-label": "Official Handle:",
+            "software-header": "Engineering Software & Academic Downloads",
+            "software-sub": "Direct access to engineering simulation packages, IDE tools, standalone scripts, and academic resources developed or curated for students and research laboratories.",
+            "soft-1-title": "MATLAB & Simulink Toolkits",
+            "soft-1-desc": "Curated simulation toolkits, control system models, and digital filter design packages for engineering students and researchers.",
+            "dl-btn-1": "Download / Access Link",
+            "soft-2-title": "Arduino & Nextion IDE Packages",
+            "soft-2-desc": "Development packages, HMI designer tools for Nextion displays, and essential library setups for embedded hardware projects.",
+            "dl-btn-2": "Download IDE Package"
+        },
+        ar: {
+            "nav-bio": "السيرة الذاتية",
+            "nav-software": "البرامج والتنزيلات",
+            "hero-title": "م.م. إبراهيم خليل كامل",
+            "hero-subtitle": "Ibrahim Khalil Kamil",
+            "hero-desc": "تدريسي في كلية الهادي الجامعة | باحث في هندسة التحكم والأنظمة.<br>متخصص في النمذجة والمحاكاة، الأنظمة المدمجة والأجهزة الإلكترونية، والتطوير البرمجي.",
+            "about-title": "نبذة عن الباحث والاهتمامات البحثية",
+            "about-body": "تدريسي أكاديمي وباحث في الأنظمة يركز على نظرية التحكم الرقمي، محاكاة الأنظمة الديناميكية، وتطوير الأنظمة المدمجة. أملك خبرة عملية في تصميم واجهات المستخدم المتقدمة للأنظمة المدمجة، إعداد النماذج الأولية للطباعة ثلاثية الأبعاد، وتصميم دوائر نقل الطاقة اللاسلكية (WPT).",
+            "skills-title": "المهارات والتقنيات البرمجية",
+            "skill-cat-1": "البرمجة وتطوير الويب",
+            "skill-cat-2": "المحاكاة وتحليل الأنظمة",
+            "skill-cat-3": "الأنظمة المدمجة والأجهزة",
+            "skill-cat-4": "النمذجة والطباعة ثلاثية الأبعاد",
+            "repos-title": "المستودعات والأنظمة المتميزة",
+            "repo-1-desc": "برنامج بايتون تلقائي يستخرج درجات الطلاب من جداول إكسيل غير المنسقة وينقلها إلى القوالب الرسمية.",
+            "repo-2-desc": "نماذج محاكاة أنظمة التحكم الرقمي بالـ MATLAB، الفضاء الحالي، ضبط متحكمات PID، وتحليلات المتانة.",
+            "repo-3-desc": "التصميم والتنفيذ العملي لدائرة استقبال الطاقة اللاسلكية بفرع 13.56 ميجاهرتز.",
+            "affiliation-title": "الانتماء الأكاديمي والتوثيق",
+            "affil-inst-label": "المؤسسة الأكاديمية:",
+            "affil-inst-val": "كلية الهادي الجامعة",
+            "affil-domain-label": "البريد والنطاق الأكاديمي الموثق:",
+            "affil-handle-label": "المعرف الرسمي:",
+            "software-header": "البرامج الهندسية والموارد الأكاديمية للتنزيل",
+            "software-sub": "وصول مباشر لحزم محاكاة الهندسة، أدوات بيئة التطوير، والبرامج المستقلة المطورة للطلاب والمختبرات.",
+            "soft-1-title": "أدوات MATLAB & Simulink",
+            "soft-1-desc": "حزم محاكاة منسقة، نماذج أنظمة تحكم، وأدوات تصميم المرشحات الرقمية للمقررات الهندسية.",
+            "dl-btn-1": "رابط التحميل / الوصول",
+            "soft-2-title": "حزم تطوير Arduino و Nextion",
+            "soft-2-desc": "حزم التطوير، أدوات تصميم واجهات شاشات Nextion، وإعدادات المكتبات الأساسية للمشاريع.",
+            "dl-btn-2": "تنزيل حزمة البرامج"
+        }
+    };
+
+    let currentLang = localStorage.getItem('lang') || 'en';
+
+    function setLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('lang', lang);
+        document.documentElement.setAttribute('lang', lang);
+        document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+        
+        document.getElementById('langLabel').innerText = lang === 'en' ? 'AR' : 'EN';
+
+        document.querySelectorAll('[data-key]').forEach(elem => {
+            const key = elem.getAttribute('data-key');
+            if (translations[lang][key]) {
+                elem.innerHTML = translations[lang][key];
+            }
+        });
+    }
+
+    document.getElementById('langToggle').addEventListener('click', () => {
+        setLanguage(currentLang === 'en' ? 'ar' : 'en');
+    });
+
+    // Initialize Language
+    setLanguage(currentLang);
+
     // Tab Switcher Logic
     function switchTab(tabName) {
         document.querySelectorAll('.page-tab-content').forEach(view => {
