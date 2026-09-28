@@ -153,7 +153,6 @@
             box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
         }
 
-        /* Controls */
         .control-btn {
             background: var(--btn-social-bg);
             border: 1px solid var(--card-border);
@@ -360,58 +359,201 @@
             border-color: var(--accent-blue);
         }
 
-        /* Repo & Software Grid */
-        .projects-grid {
+        /* Software Rich Cards Layout */
+        .software-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 22px;
         }
 
-        .project-card {
+        .software-card {
             background: var(--bg-subcard);
             border: 1px solid var(--card-border);
-            border-radius: 14px;
-            padding: 22px;
+            border-radius: 18px;
+            padding: 24px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position: relative;
+            transition: all 0.3s ease;
         }
 
-        .project-card:hover {
+        .software-card:hover {
             border-color: var(--accent-blue);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
         }
 
-        .project-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+        .software-header-box {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 15px;
+        }
+
+        .software-icon {
+            width: 54px;
+            height: 54px;
+            border-radius: 14px;
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
             color: var(--accent-blue);
+            flex-shrink: 0;
         }
 
-        .project-card p {
+        .software-card h3 {
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .software-reqs {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.78rem;
+            color: var(--accent-blue);
+            background: rgba(56, 189, 248, 0.08);
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .software-desc {
             color: var(--text-secondary);
-            font-size: 0.88rem;
-            margin-bottom: 16px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
         }
 
-        .dl-btn {
+        .software-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-download {
+            flex: 1;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            padding: 10px 18px;
+            padding: 10px 16px;
             border-radius: 10px;
-            background: rgba(56, 189, 248, 0.12);
-            color: var(--accent-blue);
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            text-decoration: none;
-            font-size: 0.88rem;
-            font-weight: 600;
-        }
-
-        .dl-btn:hover {
             background: var(--accent-blue);
             color: #ffffff;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-download:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .btn-guide {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 10px;
+            background: var(--btn-social-bg);
+            color: var(--text-primary);
+            border: 1px solid var(--card-border);
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-guide:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        /* Modal Installation Guide */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-card {
+            background: var(--bg-card);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            max-width: 650px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--btn-social-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        html[dir="rtl"] .modal-close-btn {
+            right: auto;
+            left: 20px;
+        }
+
+        .modal-title {
+            font-size: 1.4rem;
+            color: var(--accent-blue);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .modal-steps {
+            list-style: decimal;
+            padding-left: 20px;
+            color: var(--text-secondary);
+        }
+
+        html[dir="rtl"] .modal-steps {
+            padding-left: 0;
+            padding-right: 20px;
+        }
+
+        .modal-steps li {
+            margin-bottom: 12px;
+            line-height: 1.6;
         }
 
         .contact-list p {
@@ -551,18 +693,37 @@
             <div class="section-header">
                 <i class="fa-solid fa-code-branch"></i> <span data-key="repos-title">Featured Repositories & Systems</span>
             </div>
-            <div class="projects-grid">
-                <div class="project-card">
+            <div class="software-grid">
+                <div class="software-card">
                     <div>
-                        <h3><a href="https://github.com/ibrahimkhalilkamil/MATLAB-Digital-Control-and-PID" target="_blank" style="color: var(--accent-blue); text-decoration: none;">MATLAB Control Systems</a></h3>
-                        <p data-key="repo-2-desc">Digital control systems simulations, state-space representations, PID tuning models, and robustness analyses.</p>
+                        <div class="software-header-box">
+                            <div class="software-icon"><i class="fa-solid fa-calculator"></i></div>
+                            <div>
+                                <h3>MATLAB Control Systems</h3>
+                                <span class="software-reqs"><i class="fa-solid fa-laptop"></i> Simulation / Control</span>
+                            </div>
+                        </div>
+                        <p class="software-desc" data-key="repo-2-desc">Digital control systems simulations, state-space representations, PID tuning models, and robustness analyses.</p>
                     </div>
+                    <a href="https://github.com/ibrahimkhalilkamil/MATLAB-Digital-Control-and-PID" target="_blank" class="btn-download">
+                        <i class="fa-brands fa-github"></i> View Repository
+                    </a>
                 </div>
-                <div class="project-card">
+
+                <div class="software-card">
                     <div>
-                        <h3><a href="https://github.com/ibrahimkhalilkamil/Arduino-Wireless-Power-Receiver" target="_blank" style="color: var(--accent-blue); text-decoration: none;">Wireless Power Receiver</a></h3>
-                        <p data-key="repo-3-desc">Hardware realization and embedded control code for a 13.56 MHz wireless power reception unit.</p>
+                        <div class="software-header-box">
+                            <div class="software-icon"><i class="fa-solid fa-wifi"></i></div>
+                            <div>
+                                <h3>Wireless Power Receiver</h3>
+                                <span class="software-reqs"><i class="fa-solid fa-microchip"></i> 13.56 MHz WPT</span>
+                            </div>
+                        </div>
+                        <p class="software-desc" data-key="repo-3-desc">Hardware realization and embedded control code for a 13.56 MHz wireless power reception unit.</p>
                     </div>
+                    <a href="https://github.com/ibrahimkhalilkamil/Arduino-Wireless-Power-Receiver" target="_blank" class="btn-download">
+                        <i class="fa-brands fa-github"></i> View Repository
+                    </a>
                 </div>
             </div>
         </div>
@@ -589,25 +750,51 @@
             <p style="color: var(--text-secondary); margin-bottom: 25px;" data-key="software-sub">
                 Direct access to engineering simulation packages, IDE tools, standalone scripts, and academic resources developed or curated for students and research laboratories.
             </p>
-            <div class="projects-grid">
-                <div class="project-card">
+            
+            <div class="software-grid">
+                <!-- Arduino IDE Package Card -->
+                <div class="software-card">
                     <div>
-                        <h3><i class="fa-solid fa-calculator"></i> <span data-key="soft-1-title">MATLAB & Simulink Toolkits</span></h3>
-                        <p data-key="soft-1-desc">Curated simulation toolkits, control system models, and digital filter design packages for engineering students and researchers.</p>
+                        <div class="software-header-box">
+                            <div class="software-icon"><i class="fa-solid fa-microchip"></i></div>
+                            <div>
+                                <h3 data-key="soft-2-title">Arduino & Nextion IDE Package</h3>
+                                <span class="software-reqs"><i class="fa-brands fa-windows"></i> Win 10/11 | RAM: 4GB</span>
+                            </div>
+                        </div>
+                        <p class="software-desc" data-key="soft-2-desc">Complete development package including Arduino IDE, Nextion HMI Display Designer, and pre-configured essential hardware libraries.</p>
                     </div>
-                    <a href="https://github.com/ibrahimkhalilkamil/MATLAB-Digital-Control-and-PID" target="_blank" class="dl-btn">
-                        <i class="fa-solid fa-file-arrow-down"></i> <span data-key="dl-btn-1">Download / Access Link</span>
-                    </a>
+                    <div class="software-actions">
+                        <!-- استبدل # برابط Google Drive الخاص بحزمة الآردوينو -->
+                        <a href="#" target="_blank" class="btn-download">
+                            <i class="fa-solid fa-download"></i> <span data-key="dl-btn-2">Download Package</span>
+                        </a>
+                        <button class="btn-guide" onclick="openModal('modal-arduino')">
+                            <i class="fa-solid fa-circle-info"></i> <span data-key="guide-btn">Guide</span>
+                        </button>
+                    </div>
                 </div>
 
-                <div class="project-card">
+                <!-- MATLAB Toolkits Card -->
+                <div class="software-card">
                     <div>
-                        <h3><i class="fa-solid fa-microchip"></i> <span data-key="soft-2-title">Arduino & Nextion IDE Packages</span></h3>
-                        <p data-key="soft-2-desc">Development packages, HMI designer tools for Nextion displays, and essential library setups for embedded hardware projects.</p>
+                        <div class="software-header-box">
+                            <div class="software-icon"><i class="fa-solid fa-calculator"></i></div>
+                            <div>
+                                <h3 data-key="soft-1-title">MATLAB & Simulink Toolkits</h3>
+                                <span class="software-reqs"><i class="fa-solid fa-gear"></i> MATLAB R2022b+</span>
+                            </div>
+                        </div>
+                        <p class="software-desc" data-key="soft-1-desc">Curated simulation toolkits, control system models, and digital filter design packages for engineering students and researchers.</p>
                     </div>
-                    <a href="#" target="_blank" class="dl-btn">
-                        <i class="fa-solid fa-download"></i> <span data-key="dl-btn-2">Download IDE Package</span>
-                    </a>
+                    <div class="software-actions">
+                        <a href="https://github.com/ibrahimkhalilkamil/MATLAB-Digital-Control-and-PID" target="_blank" class="btn-download">
+                            <i class="fa-solid fa-file-arrow-down"></i> <span data-key="dl-btn-1">Get Toolkits</span>
+                        </a>
+                        <button class="btn-guide" onclick="openModal('modal-matlab')">
+                            <i class="fa-solid fa-circle-info"></i> <span data-key="guide-btn">Guide</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -618,8 +805,45 @@
     </footer>
 </div>
 
-<!-- JavaScript for Language Switch, Tabs, and Theme -->
+<!-- Modal Installation Guide: Arduino Package -->
+<div class="modal-overlay" id="modal-arduino">
+    <div class="modal-card">
+        <button class="modal-close-btn" onclick="closeModal('modal-arduino')"><i class="fa-solid fa-xmark"></i></button>
+        <h3 class="modal-title"><i class="fa-solid fa-microchip"></i> <span data-key="modal-arduino-title">Arduino & Nextion Setup Guide</span></h3>
+        <ol class="modal-steps" data-key="modal-arduino-steps">
+            <li>Download the zipped package file using the "Download Package" button.</li>
+            <li>Extract the contents to a folder on your computer (e.g., C:\EngineeringTools).</li>
+            <li>Run the `Arduino-IDE-Setup.exe` installer and follow the standard instructions.</li>
+            <li>Copy the included `Libraries` folder into your `Documents/Arduino/libraries` directory.</li>
+            <li>Launch Nextion Editor setup if you intend to design HMI touchscreen interfaces.</li>
+        </ol>
+    </div>
+</div>
+
+<!-- Modal Installation Guide: MATLAB Package -->
+<div class="modal-overlay" id="modal-matlab">
+    <div class="modal-card">
+        <button class="modal-close-btn" onclick="closeModal('modal-matlab')"><i class="fa-solid fa-xmark"></i></button>
+        <h3 class="modal-title"><i class="fa-solid fa-calculator"></i> <span data-key="modal-matlab-title">MATLAB Simulation Models Setup</span></h3>
+        <ol class="modal-steps" data-key="modal-matlab-steps">
+            <li>Access the repository or download the `.zip` archive containing the `.m` files and Simulink `.slx` models.</li>
+            <li>Open MATLAB and set the Current Folder path to the unzipped project directory.</li>
+            <li>Run the startup script `init_params.m` to load system matrices and variables into the workspace.</li>
+            <li>Launch Simulink and open the desired control system model (e.g., `digital_pid_sim.slx`).</li>
+        </ol>
+    </div>
+</div>
+
+<!-- JavaScript for Language Switch, Tabs, Theme, and Modals -->
 <script>
+    // Modal Control Functions
+    function openModal(id) {
+        document.getElementById(id).classList.add('active');
+    }
+    function closeModal(id) {
+        document.getElementById(id).classList.remove('active');
+    }
+
     // Dictionary Translations
     const translations = {
         en: {
@@ -647,10 +871,15 @@
             "software-sub": "Direct access to engineering simulation packages, IDE tools, standalone scripts, and academic resources developed or curated for students and research laboratories.",
             "soft-1-title": "MATLAB & Simulink Toolkits",
             "soft-1-desc": "Curated simulation toolkits, control system models, and digital filter design packages for engineering students and researchers.",
-            "dl-btn-1": "Download / Access Link",
-            "soft-2-title": "Arduino & Nextion IDE Packages",
-            "soft-2-desc": "Development packages, HMI designer tools for Nextion displays, and essential library setups for embedded hardware projects.",
-            "dl-btn-2": "Download IDE Package"
+            "dl-btn-1": "Get Toolkits",
+            "soft-2-title": "Arduino & Nextion IDE Package",
+            "soft-2-desc": "Complete development package including Arduino IDE, Nextion HMI Display Designer, and pre-configured essential hardware libraries.",
+            "dl-btn-2": "Download Package",
+            "guide-btn": "Guide / الشرح",
+            "modal-arduino-title": "Arduino & Nextion Setup Guide",
+            "modal-arduino-steps": "<li>Download the zipped package file using the 'Download Package' button.</li><li>Extract the contents to a folder on your computer (e.g., C:\\EngineeringTools).</li><li>Run the Arduino IDE installer and follow instructions.</li><li>Copy the included 'Libraries' folder into your 'Documents/Arduino/libraries' directory.</li><li>Launch Nextion Editor setup if designing HMI touchscreen interfaces.</li>",
+            "modal-matlab-title": "MATLAB Simulation Models Setup",
+            "modal-matlab-steps": "<li>Access the repository or download the archive containing .m files and Simulink models.</li><li>Open MATLAB and set Current Directory to the unzipped folder.</li><li>Run startup script init_params.m to initialize variables.</li><li>Open Simulink and launch desired control system model (.slx).</li>"
         },
         ar: {
             "nav-bio": "السيرة الذاتية",
@@ -677,10 +906,15 @@
             "software-sub": "وصول مباشر لحزم محاكاة الهندسة، أدوات بيئة التطوير، والبرامج المستقلة المطورة للطلاب والمختبرات.",
             "soft-1-title": "أدوات MATLAB & Simulink",
             "soft-1-desc": "حزم محاكاة منسقة، نماذج أنظمة تحكم، وأدوات تصميم المرشحات الرقمية للمقررات الهندسية.",
-            "dl-btn-1": "رابط التحميل / الوصول",
-            "soft-2-title": "حزم تطوير Arduino و Nextion",
-            "soft-2-desc": "حزم التطوير، أدوات تصميم واجهات شاشات Nextion، وإعدادات المكتبات الأساسية للمشاريع.",
-            "dl-btn-2": "تنزيل حزمة البرامج"
+            "dl-btn-1": "الحصول على الموارد",
+            "soft-2-title": "حزمة أدوات Arduino و Nextion",
+            "soft-2-desc": "حزمة التطوير المتكاملة وتتضمن بيئة Arduino IDE، برنامج تصميم واجهات شاشات Nextion، والمكتبات الأساسية المجهزة.",
+            "dl-btn-2": "تنزيل حزمة البرامج",
+            "guide-btn": "طريقة التنصيب",
+            "modal-arduino-title": "دليل تثبيت وتهيئة أدوات Arduino و Nextion",
+            "modal-arduino-steps": "<li>حمل الملف المضغوط للحزمة بالضغط على زر 'تنزيل حزمة البرامج'.</li><li>قم بفك الضغط عن الملف في مجلد على حاسوبك (مثال: C:\\EngineeringTools).</li><li>قم بتشغيل ملف تثبيت بيئة Arduino IDE واتبع الخطوات الاعتيادية.</li><li>انسخ مجلد المكتبات (Libraries) المرفق وانقله إلى مسار المستندات: Documents/Arduino/libraries.</li><li>شغّل برنامج Nextion Editor لتصميم واجهات الشاشات اللمسية إذا لزم الأمر.</li>",
+            "modal-matlab-title": "دليل تشغيل نماذج محاكاة MATLAB",
+            "modal-matlab-steps": "<li>ادخل للمستودع أو حمل الملف المضغوط الذي يحتوي على أكواد .m ونماذج Simulink (.slx).</li><li>افتح برنامج MATLAB واجعل المجلد الحالي (Current Directory) هو المجلد المرفق.</li><li>شغّل سكربت init_params.m لتهيئة المتغيرات والمصفوفات في الـ Workspace.</li><li>افتح برنامج Simulink وشغّل نموذج التحكم المطلوب (مثل digital_pid_sim.slx).</li>"
         }
     };
 
