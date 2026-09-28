@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSc. Ibrahim Khalil Kamil | إبراهيم خليل كامل</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Official personal website and academic portfolio of MSc. Ibrahim Khalil Kamil. Lecturer at Al-Hadi University College, researcher in Control & Systems Engineering, Modeling, Simulation, and Embedded Systems.">
+    <meta name="keywords" content="Ibrahim Khalil Kamil, إبراهيم خليل كامل, Control Engineering, Digital Control, Al-Hadi University College, MATLAB, Arduino, IoT, Google Scholar, ORCID">
+    <meta name="author" content="Ibrahim Khalil Kamil">
+    
+    <!-- Fonts and FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #1e293b;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', 'Noto Sans Arabic', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .profile-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-card h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .profile-card h2 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .profile-card .tagline {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin: 0 auto 25px auto;
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .badge-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-scholar { background-color: #4285f4; color: white; }
+        .btn-orcid { background-color: #a6ce39; color: white; }
+        .btn-github { background-color: #24292e; color: white; }
+
+        .badge-btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--primary);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .repo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .repo-card {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            transition: border-color 0.2s;
+        }
+
+        .repo-card:hover {
+            border-color: var(--accent);
+        }
+
+        .repo-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .repo-card h3 a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .repo-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header Section -->
+    <div class="profile-card">
+        <h1>MSc. Ibrahim Khalil Kamil</h1>
+        <h2>إبراهيم خليل كامل</h2>
+        <p class="tagline">
+            Lecturer at Al-Hadi University College | MSc Researcher in Control & Systems Engineering.<br>
+            Specialized in Modeling & Simulation, Digital Control Systems, MATLAB, and Embedded Hardware (Arduino/IoT).
+        </p>
+
+        <div class="badge-container">
+            <a href="https://scholar.google.com/citations?user=UT1IsdEAAAAJ&hl=ar" target="_blank" class="badge-btn btn-scholar">
+                <i class="fa-solid fa-graduation-cap"></i> Google Scholar
+            </a>
+            <a href="https://orcid.org/0009-0001-9884-8397" target="_blank" class="badge-btn btn-orcid">
+                <i class="fa-brands fa-orcid"></i> ORCID Profile
+            </a>
+            <a href="https://github.com/ibrahimkhalilkamil" target="_blank" class="badge-btn btn-github">
+                <i class="fa-brands fa-github"></i> GitHub Profile
+            </a>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="section">
+        <h2 class="section-title"><i class="fa-solid fa-user-gear"></i> About & Specialization</h2>
+        <p>
+            Academic researcher and systems engineer focusing on control theory, optimal control frameworks, and digital control applications. Proficient in developing dynamic system simulations using MATLAB and building embedded power and sensing hardware using Arduino and IoT communication protocols.
+        </p>
+    </div>
+
+    <!-- Projects / Repositories -->
+    <div class="section">
+        <h2 class="section-title"><i class="fa-solid fa-code"></i> Featured Projects & Research</h2>
+        <div class="repo-grid">
+            <div class="repo-card">
+                <h3><a href="https://github.com/ibrahimkhalilkamil/student-results" target="_blank">student-results</a></h3>
+                <p>Python-based automated tool designed to parse unorganized student grade sheets and transfer scores into target templates.</p>
+            </div>
+            <div class="repo-card">
+                <h3><a href="https://github.com/ibrahimkhalilkamil/MATLAB-Digital-Control-and-PID" target="_blank">MATLAB Digital Control</a></h3>
+                <p>Digital control systems, state-space simulation models, PID tuning via Ziegler-Nichols, and robustness analysis.</p>
+            </div>
+            <div class="repo-card">
+                <h3><a href="https://github.com/ibrahimkhalilkamil/Arduino-Wireless-Power-Receiver" target="_blank">Wireless Power Receiver</a></h3>
+                <p>Design and hardware realization of a 13.56 MHz wireless power reception circuit for smart devices.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact & Institutional Info -->
+    <div class="section">
+        <h2 class="section-title"><i class="fa-solid fa-envelope"></i> Institutional & Contact Info</h2>
+        <p><strong>Affiliation:</strong> Al-Hadi University College (كلية الهادي الجامعة)</p>
+        <p><strong>Verified Academic Domain:</strong> huc.edu.iq</p>
+        <p><strong>GitHub Organization/User:</strong> <a href="https://github.com/ibrahimkhalilkamil" style="color: var(--accent);">@ibrahimkhalilkamil</a></p>
+    </div>
+
+    <footer>
+        &copy; 2026 MSc. Ibrahim Khalil Kamil. All Rights Reserved.
+    </footer>
+</div>
+
+</body>
+</html>
