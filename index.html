@@ -391,18 +391,25 @@
             margin-bottom: 15px;
         }
 
-        .software-icon {
-            width: 54px;
-            height: 54px;
-            border-radius: 14px;
-            background: rgba(56, 189, 248, 0.12);
-            border: 1px solid rgba(56, 189, 248, 0.3);
+        /* Software Icon Box for Custom Images */
+        .software-icon-box {
+            width: 58px;
+            height: 58px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
-            color: var(--accent-blue);
+            padding: 10px;
             flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .software-icon-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .software-card h3 {
@@ -709,7 +716,9 @@
                 <div class="software-card">
                     <div>
                         <div class="software-header-box">
-                            <div class="software-icon"><i class="fa-solid fa-calculator"></i></div>
+                            <div class="software-icon-box">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB Logo" class="software-icon-img">
+                            </div>
                             <div>
                                 <h3>MATLAB Control Systems</h3>
                                 <span class="software-reqs"><i class="fa-solid fa-laptop"></i> Simulation / Control</span>
@@ -725,7 +734,9 @@
                 <div class="software-card">
                     <div>
                         <div class="software-header-box">
-                            <div class="software-icon"><i class="fa-solid fa-wifi"></i></div>
+                            <div class="software-icon-box">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino Logo" class="software-icon-img">
+                            </div>
                             <div>
                                 <h3>Wireless Power Receiver</h3>
                                 <span class="software-reqs"><i class="fa-solid fa-microchip"></i> 13.56 MHz WPT</span>
@@ -764,11 +775,13 @@
             </p>
             
             <div class="software-grid">
-                <!-- NEW: Microsoft Office 365 Package Card -->
+                <!-- Microsoft Office 365 Package Card -->
                 <div class="software-card">
                     <div>
                         <div class="software-header-box">
-                            <div class="software-icon"><i class="fa-solid fa-file-word"></i></div>
+                            <div class="software-icon-box">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Microsoft_Office_logo_%282019%E2%80%93present%29.svg" alt="Office 365 Logo" class="software-icon-img">
+                            </div>
                             <div>
                                 <h3 data-key="soft-office-title">Microsoft Office 365</h3>
                                 <span class="software-reqs"><i class="fa-brands fa-windows"></i> Win 10/11 | Online Installer</span>
@@ -790,7 +803,9 @@
                 <div class="software-card">
                     <div>
                         <div class="software-header-box">
-                            <div class="software-icon"><i class="fa-solid fa-microchip"></i></div>
+                            <div class="software-icon-box">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino Logo" class="software-icon-img">
+                            </div>
                             <div>
                                 <h3 data-key="soft-2-title">Arduino & Nextion IDE Package</h3>
                                 <span class="software-reqs"><i class="fa-brands fa-windows"></i> Win 10/11 | RAM: 4GB</span>
@@ -812,7 +827,9 @@
                 <div class="software-card">
                     <div>
                         <div class="software-header-box">
-                            <div class="software-icon"><i class="fa-solid fa-calculator"></i></div>
+                            <div class="software-icon-box">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB Logo" class="software-icon-img">
+                            </div>
                             <div>
                                 <h3 data-key="soft-1-title">MATLAB & Simulink Toolkits</h3>
                                 <span class="software-reqs"><i class="fa-solid fa-gear"></i> MATLAB R2022b+</span>
