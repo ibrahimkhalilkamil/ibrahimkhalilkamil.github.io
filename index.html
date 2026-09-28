@@ -391,25 +391,24 @@
             margin-bottom: 15px;
         }
 
-        /* Software Icon Box for Custom Images */
+        /* Inline Custom Vector SVGs Container */
         .software-icon-box {
             width: 58px;
             height: 58px;
             border-radius: 16px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--card-border);
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.25);
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 10px;
             flex-shrink: 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
-        .software-icon-img {
+        .software-icon-box svg {
             width: 100%;
             height: 100%;
-            object-fit: contain;
         }
 
         .software-card h3 {
@@ -717,7 +716,7 @@
                     <div>
                         <div class="software-header-box">
                             <div class="software-icon-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB Logo" class="software-icon-img">
+                                <svg viewBox="0 0 128 128"><path fill="#E15C26" d="M12.5 90L35 30l22.5 45L80 15l35.5 90H12.5z"/><path fill="#D23727" d="M57.5 75L80 15l35.5 90H80z"/><path fill="#1270B8" d="M12.5 90l45-15L80 105z"/></svg>
                             </div>
                             <div>
                                 <h3>MATLAB Control Systems</h3>
@@ -735,7 +734,7 @@
                     <div>
                         <div class="software-header-box">
                             <div class="software-icon-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino Logo" class="software-icon-img">
+                                <svg viewBox="0 0 128 128"><path fill="#00979D" d="M64 14C36.4 14 14 36.4 14 64s22.4 50 50 50 50-22.4 50-50S91.6 14 64 14zm-18 60c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm36 0c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15z"/><path fill="#FFF" d="M38 61h16v6H38zm36 0h16v6H74zm8-11h6v28h-6z"/></svg>
                             </div>
                             <div>
                                 <h3>Wireless Power Receiver</h3>
@@ -775,12 +774,60 @@
             </p>
             
             <div class="software-grid">
-                <!-- Microsoft Office 365 Package Card -->
+                <!-- emu8086 Microprocessor Card -->
                 <div class="software-card">
                     <div>
                         <div class="software-header-box">
                             <div class="software-icon-box">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Microsoft_Office_logo_%282019%E2%80%93present%29.svg" alt="Office 365 Logo" class="software-icon-img">
+                                <svg viewBox="0 0 128 128"><rect x="28" y="28" width="72" height="72" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="6"/><rect x="44" y="44" width="40" height="40" rx="6" fill="#38BDF8"/><path stroke="#38BDF8" stroke-width="5" stroke-linecap="round" d="M40 12v16M64 12v16M88 12v16M40 100v16M64 100v16M88 100v16M12 40h16M12 64h16M12 88h16M100 40h16M100 64h16M100 88h16"/></svg>
+                            </div>
+                            <div>
+                                <h3 data-key="soft-emu-title">emu8086 Microprocessor Emulator</h3>
+                                <span class="software-reqs"><i class="fa-brands fa-windows"></i> Win 7/10/11 | 8086 Assembly</span>
+                            </div>
+                        </div>
+                        <p class="software-desc" data-key="soft-emu-desc">8086 Microprocessor emulator with integrated assembler and virtual hardware tutorials for Assembly language courses.</p>
+                    </div>
+                    <div class="software-actions">
+                        <a href="https://drive.google.com/file/d/1UPmJIwVDFGrstaGUq9YS2qcgTnWM2a8D/view?usp=drive_link" target="_blank" class="btn-download">
+                            <i class="fa-solid fa-download"></i> <span data-key="dl-btn-emu">Download emu8086</span>
+                        </a>
+                        <button class="btn-guide" onclick="openModal('modal-emu')">
+                            <i class="fa-solid fa-circle-info"></i> <span data-key="guide-btn">Guide</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 8085 Microprocessor Simulator Card -->
+                <div class="software-card">
+                    <div>
+                        <div class="software-header-box">
+                            <div class="software-icon-box">
+                                <svg viewBox="0 0 128 128"><rect x="20" y="20" width="88" height="88" rx="10" fill="#0F172A" stroke="#818CF8" stroke-width="6"/><circle cx="64" cy="64" r="22" fill="#818CF8"/><path stroke="#818CF8" stroke-width="6" d="M64 20v22M64 86v22M20 64h22M86 64h22"/></svg>
+                            </div>
+                            <div>
+                                <h3 data-key="soft-8085-title">8085 Microprocessor Simulator</h3>
+                                <span class="software-reqs"><i class="fa-brands fa-windows"></i> Win 7/10/11 | 8085 Kit</span>
+                            </div>
+                        </div>
+                        <p class="software-desc" data-key="soft-8085-desc">Graphical simulator kit for Intel 8085 microprocessor to write, debug, and execute assembly opcodes.</p>
+                    </div>
+                    <div class="software-actions">
+                        <a href="https://drive.google.com/file/d/1aHKenvp8Nrxohammz_KbWfk4dJyjeQ6A/view?usp=drive_link" target="_blank" class="btn-download">
+                            <i class="fa-solid fa-download"></i> <span data-key="dl-btn-8085">Download 8085 Kit</span>
+                        </a>
+                        <button class="btn-guide" onclick="openModal('modal-8085')">
+                            <i class="fa-solid fa-circle-info"></i> <span data-key="guide-btn">Guide</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Microsoft Office 365 Card -->
+                <div class="software-card">
+                    <div>
+                        <div class="software-header-box">
+                            <div class="software-icon-box">
+                                <svg viewBox="0 0 128 128"><path fill="#E63B00" d="M72 16l40 12v72l-40 12V16z"/><path fill="#FF8C00" d="M16 32l56-16v96L16 96V32z"/><path fill="#FFF" d="M34 50h20v28H34z"/></svg>
                             </div>
                             <div>
                                 <h3 data-key="soft-office-title">Microsoft Office 365</h3>
@@ -804,7 +851,7 @@
                     <div>
                         <div class="software-header-box">
                             <div class="software-icon-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino Logo" class="software-icon-img">
+                                <svg viewBox="0 0 128 128"><path fill="#00979D" d="M64 14C36.4 14 14 36.4 14 64s22.4 50 50 50 50-22.4 50-50S91.6 14 64 14zm-18 60c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm36 0c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15z"/><path fill="#FFF" d="M38 61h16v6H38zm36 0h16v6H74zm8-11h6v28h-6z"/></svg>
                             </div>
                             <div>
                                 <h3 data-key="soft-2-title">Arduino & Nextion IDE Package</h3>
@@ -828,7 +875,7 @@
                     <div>
                         <div class="software-header-box">
                             <div class="software-icon-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB Logo" class="software-icon-img">
+                                <svg viewBox="0 0 128 128"><path fill="#E15C26" d="M12.5 90L35 30l22.5 45L80 15l35.5 90H12.5z"/><path fill="#D23727" d="M57.5 75L80 15l35.5 90H80z"/><path fill="#1270B8" d="M12.5 90l45-15L80 105z"/></svg>
                             </div>
                             <div>
                                 <h3 data-key="soft-1-title">MATLAB & Simulink Toolkits</h3>
@@ -853,6 +900,34 @@
     <footer>
         &copy; 2026 MSc. Ibrahim Khalil Kamil. All Rights Reserved.
     </footer>
+</div>
+
+<!-- Modal Guide: emu8086 -->
+<div class="modal-overlay" id="modal-emu">
+    <div class="modal-card">
+        <button class="modal-close-btn" onclick="closeModal('modal-emu')"><i class="fa-solid fa-xmark"></i></button>
+        <h3 class="modal-title"><i class="fa-solid fa-microchip"></i> <span data-key="modal-emu-title">emu8086 Setup & Instructions</span></h3>
+        <ol class="modal-steps" data-key="modal-emu-steps">
+            <li>Download the zipped archive `emu8086-microprocessor-emulator.zip`.</li>
+            <li>Extract the zip folder to your desired location.</li>
+            <li>Run `setup.exe` to install the emulator on Windows.</li>
+            <li>Use the included Registration Key inside Readme to activate full features.</li>
+        </ol>
+    </div>
+</div>
+
+<!-- Modal Guide: 8085 Setup -->
+<div class="modal-overlay" id="modal-8085">
+    <div class="modal-card">
+        <button class="modal-close-btn" onclick="closeModal('modal-8085')"><i class="fa-solid fa-xmark"></i></button>
+        <h3 class="modal-title"><i class="fa-solid fa-microchip"></i> <span data-key="modal-8085-title">8085 Simulator Kit Setup</span></h3>
+        <ol class="modal-steps" data-key="modal-8085-steps">
+            <li>Download `8085Setup.zip` and extract its contents.</li>
+            <li>Navigate into the `8085 Setup` folder and execute `setup.exe`.</li>
+            <li>Follow on-screen installation prompts to complete system file registration.</li>
+            <li>Launch 8085 Simulator from Start Menu to execute microprocessor assembly code.</li>
+        </ol>
+    </div>
 </div>
 
 <!-- Modal Installation Guide: Office 365 -->
@@ -935,6 +1010,16 @@
             "affil-handle-label": "Official Handle:",
             "software-header": "Engineering Software & Academic Downloads",
             "software-sub": "Direct access to engineering simulation packages, IDE tools, standalone scripts, and academic resources developed or curated for students and research laboratories.",
+            "soft-emu-title": "emu8086 Microprocessor Emulator",
+            "soft-emu-desc": "8086 Microprocessor emulator with integrated assembler and virtual hardware tutorials for Assembly language courses.",
+            "dl-btn-emu": "Download emu8086",
+            "modal-emu-title": "emu8086 Setup & Instructions",
+            "modal-emu-steps": "<li>Download `emu8086-microprocessor-emulator.zip`.</li><li>Extract the ZIP folder contents.</li><li>Run `setup.exe` to install emulator.</li><li>Follow licensing instructions in Readme.txt.</li>",
+            "soft-8085-title": "8085 Microprocessor Simulator",
+            "soft-8085-desc": "Graphical simulator kit for Intel 8085 microprocessor to write, debug, and execute assembly opcodes.",
+            "dl-btn-8085": "Download 8085 Kit",
+            "modal-8085-title": "8085 Simulator Kit Setup",
+            "modal-8085-steps": "<li>Download `8085Setup.zip` and extract contents.</li><li>Open `8085 Setup` folder and launch `setup.exe`.</li><li>Follow system setup prompts.</li>",
             "soft-office-title": "Microsoft Office 365",
             "soft-office-desc": "Complete Office 365 setup package with automated lifetime activation process without cracks (requires internet connection).",
             "dl-btn-office": "Download Installer",
@@ -975,6 +1060,16 @@
             "affil-handle-label": "المعرف الرسمي:",
             "software-header": "البرامج الهندسية والموارد الأكاديمية للتنزيل",
             "software-sub": "وصول مباشر لحزم محاكاة الهندسة، أدوات بيئة التطوير، والبرامج المستقلة المطورة للطلاب والمختبرات.",
+            "soft-emu-title": "محاكي المعالج emu8086",
+            "soft-emu-desc": "محاكي معالج 8086 المتكامل مع مجمع لغة التجميع وشاشات عرض الأجهزة الافتراضية لمادة المعالجات.",
+            "dl-btn-emu": "تنزيل emu8086",
+            "modal-emu-title": "دليل تثبيت محاكي emu8086",
+            "modal-emu-steps": "<li>حمل الملف المضغوط emu8086-microprocessor-emulator.zip.</li><li>قم بفك الضغط عن المجلد.</li><li>شغّل ملف setup.exe لتنصيب المحاكي على ويندوز.</li><li>اتبع تعليمات التفعيل المرفقة في ملف Readme.txt.</li>",
+            "soft-8085-title": "محاكي المعالج 8085 Simulator",
+            "soft-8085-desc": "حقيبة محاكاة رسومية لمعالج إنيل 8085 لكتابة واختبار وتتبع أكواد التجميع برمجياً.",
+            "dl-btn-8085": "تنزيل حقيبة 8085",
+            "modal-8085-title": "دليل تنصيب حقيبة 8085 Simulator",
+            "modal-8085-steps": "<li>حمل ملف 8085Setup.zip وقم بفك الضغط.</li><li>افتح مجلد 8085 Setup وشغّل ملف setup.exe.</li><li>اتبع خطوة التثبيت الرسمية على النظام.</li>",
             "soft-office-title": "برنامج Microsoft Office 365",
             "soft-office-desc": "حزمة تثبيت أوفيس 365 أونلاين المتكاملة مع طريقة التفعيل التلقائي مدى الحياة بدون كراك (تتطلب اتصال إنترنت).",
             "dl-btn-office": "تنزيل ملف التثبيت",
