@@ -556,6 +556,18 @@
             line-height: 1.6;
         }
 
+        .code-block {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--card-border);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-family: monospace;
+            color: var(--accent-blue);
+            margin: 6px 0;
+            display: inline-block;
+            user-select: all;
+        }
+
         .contact-list p {
             margin-bottom: 10px;
             color: var(--text-secondary);
@@ -752,6 +764,28 @@
             </p>
             
             <div class="software-grid">
+                <!-- NEW: Microsoft Office 365 Package Card -->
+                <div class="software-card">
+                    <div>
+                        <div class="software-header-box">
+                            <div class="software-icon"><i class="fa-solid fa-file-word"></i></div>
+                            <div>
+                                <h3 data-key="soft-office-title">Microsoft Office 365</h3>
+                                <span class="software-reqs"><i class="fa-brands fa-windows"></i> Win 10/11 | Online Installer</span>
+                            </div>
+                        </div>
+                        <p class="software-desc" data-key="soft-office-desc">Complete Office 365 setup package with automated lifetime activation process without cracks.</p>
+                    </div>
+                    <div class="software-actions">
+                        <a href="https://drive.google.com/file/d/11MARJEw6M-eW2W4HW9gw8ZiebXAhJb10/view?usp=drive_link" target="_blank" class="btn-download">
+                            <i class="fa-solid fa-download"></i> <span data-key="dl-btn-office">Download Installer</span>
+                        </a>
+                        <button class="btn-guide" onclick="openModal('modal-office')">
+                            <i class="fa-solid fa-circle-info"></i> <span data-key="guide-btn">Guide</span>
+                        </button>
+                    </div>
+                </div>
+
                 <!-- Arduino IDE Package Card -->
                 <div class="software-card">
                     <div>
@@ -765,7 +799,6 @@
                         <p class="software-desc" data-key="soft-2-desc">Complete development package including Arduino IDE (v1.8.18), Nextion HMI Display Designer, and pre-configured essential hardware libraries.</p>
                     </div>
                     <div class="software-actions">
-                        <!-- تم ربط رابط Google Drive المباشر هنا -->
                         <a href="https://drive.google.com/file/d/1lpeI8ytLVISJPOhBYWW1fSMilW9NTQJq/view?usp=drive_link" target="_blank" class="btn-download">
                             <i class="fa-solid fa-download"></i> <span data-key="dl-btn-2">Download Package</span>
                         </a>
@@ -805,17 +838,33 @@
     </footer>
 </div>
 
+<!-- Modal Installation Guide: Office 365 -->
+<div class="modal-overlay" id="modal-office">
+    <div class="modal-card">
+        <button class="modal-close-btn" onclick="closeModal('modal-office')"><i class="fa-solid fa-xmark"></i></button>
+        <h3 class="modal-title"><i class="fa-solid fa-file-word"></i> <span data-key="modal-office-title">Microsoft Office 365 Setup & Activation</span></h3>
+        <ol class="modal-steps" data-key="modal-office-steps">
+            <li>Download the zipped archive `OfficeSetup.rar` and extract its contents.</li>
+            <li>Ensure internet connection is active, then run the installer file to install Office 365.</li>
+            <li>Open Windows **PowerShell** as Administrator.</li>
+            <li>Execute the command: <span class="code-block">irm https://get.activated.win | iex</span></li>
+            <li>In the activation menu, press key <span class="code-block">2</span> to select Office Activation.</li>
+            <li>Press key <span class="code-block">1</span> to complete lifetime activation without cracks.</li>
+        </ol>
+    </div>
+</div>
+
 <!-- Modal Installation Guide: Arduino Package -->
 <div class="modal-overlay" id="modal-arduino">
     <div class="modal-card">
         <button class="modal-close-btn" onclick="closeModal('modal-arduino')"><i class="fa-solid fa-xmark"></i></button>
         <h3 class="modal-title"><i class="fa-solid fa-microchip"></i> <span data-key="modal-arduino-title">Arduino & Nextion Setup Guide</span></h3>
         <ol class="modal-steps" data-key="modal-arduino-steps">
-            <li>Download the zipped package file using the 'Download Package' button.</li>
-            <li>Extract the contents to a folder on your computer (e.g., C:\EngineeringTools).</li>
-            <li>Run the `arduino-1.8.18-windows.exe` installer and follow the standard instructions.</li>
-            <li>Copy the included `Libraries` folder into your `Documents/Arduino/libraries` directory.</li>
-            <li>Launch Nextion Editor setup if you intend to design HMI touchscreen interfaces.</li>
+            <li>Download the installer file using the 'Download Package' button.</li>
+            <li>Run the `arduino-1.8.18-windows.exe` file to begin setup.</li>
+            <li>Follow the standard installation steps for Windows.</li>
+            <li>Copy additional libraries into your 'Documents/Arduino/libraries' folder.</li>
+            <li>Launch Nextion Editor setup if designing HMI touchscreen interfaces.</li>
         </ol>
     </div>
 </div>
@@ -826,10 +875,10 @@
         <button class="modal-close-btn" onclick="closeModal('modal-matlab')"><i class="fa-solid fa-xmark"></i></button>
         <h3 class="modal-title"><i class="fa-solid fa-calculator"></i> <span data-key="modal-matlab-title">MATLAB Simulation Models Setup</span></h3>
         <ol class="modal-steps" data-key="modal-matlab-steps">
-            <li>Access the repository or download the `.zip` archive containing the `.m` files and Simulink `.slx` models.</li>
-            <li>Open MATLAB and set the Current Folder path to the unzipped project directory.</li>
-            <li>Run the startup script `init_params.m` to load system matrices and variables into the workspace.</li>
-            <li>Launch Simulink and open the desired control system model (e.g., `digital_pid_sim.slx`).</li>
+            <li>Access the repository or download the archive containing .m files and Simulink models.</li>
+            <li>Open MATLAB and set Current Directory to the unzipped folder.</li>
+            <li>Run startup script init_params.m to initialize variables.</li>
+            <li>Open Simulink and launch desired control system model (.slx).</li>
         </ol>
     </div>
 </div>
@@ -869,6 +918,11 @@
             "affil-handle-label": "Official Handle:",
             "software-header": "Engineering Software & Academic Downloads",
             "software-sub": "Direct access to engineering simulation packages, IDE tools, standalone scripts, and academic resources developed or curated for students and research laboratories.",
+            "soft-office-title": "Microsoft Office 365",
+            "soft-office-desc": "Complete Office 365 setup package with automated lifetime activation process without cracks (requires internet connection).",
+            "dl-btn-office": "Download Installer",
+            "modal-office-title": "Microsoft Office 365 Setup & Lifetime Activation",
+            "modal-office-steps": "<li>Download `OfficeSetup.rar` and extract its contents.</li><li>Ensure active internet connection, then double-click installer file.</li><li>Open Windows PowerShell as Administrator.</li><li>Execute command: <span class='code-block'>irm https://get.activated.win | iex</span></li><li>Press <span class='code-block'>2</span> for Office Activation.</li><li>Press <span class='code-block'>1</span> to activate Office 365 permanently.</li>",
             "soft-1-title": "MATLAB & Simulink Toolkits",
             "soft-1-desc": "Curated simulation toolkits, control system models, and digital filter design packages for engineering students and researchers.",
             "dl-btn-1": "Get Toolkits",
@@ -904,6 +958,11 @@
             "affil-handle-label": "المعرف الرسمي:",
             "software-header": "البرامج الهندسية والموارد الأكاديمية للتنزيل",
             "software-sub": "وصول مباشر لحزم محاكاة الهندسة، أدوات بيئة التطوير، والبرامج المستقلة المطورة للطلاب والمختبرات.",
+            "soft-office-title": "برنامج Microsoft Office 365",
+            "soft-office-desc": "حزمة تثبيت أوفيس 365 أونلاين المتكاملة مع طريقة التفعيل التلقائي مدى الحياة بدون كراك (تتطلب اتصال إنترنت).",
+            "dl-btn-office": "تنزيل ملف التثبيت",
+            "modal-office-title": "دليل تثبيت وتفعيل Microsoft Office 365 مدى الحياة",
+            "modal-office-steps": "<li>حمل ملف تثبيت الأوفيس المضغوط OfficeSetup.rar وقم بفك الضغط عنه.</li><li>تأكد من وجود اتصال بالإنترنت، ثم اضغط مرتين على ملف التثبيت لبدء تنصيب أوفيس.</li><li>افتح تطبيق PowerShell في ويندوز كمسؤول (Run as Administrator).</li><li>اكتب الأمر الآتي واضغط Enter: <span class='code-block'>irm https://get.activated.win | iex</span></li><li>من القائمة الظاهرة اختر رقم <span class='code-block'>2</span> لتفعيل أوفيس.</li><li>اضغط رقم <span class='code-block'>1</span> لإتمام التفعيل المباشر مدى الحياة.</li>",
             "soft-1-title": "أدوات MATLAB & Simulink",
             "soft-1-desc": "حزم محاكاة منسقة، نماذج أنظمة تحكم، وأدوات تصميم المرشحات الرقمية للمقررات الهندسية.",
             "dl-btn-1": "الحصول على الموارد",
