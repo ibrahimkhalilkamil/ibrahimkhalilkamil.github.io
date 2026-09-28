@@ -391,19 +391,49 @@
             margin-bottom: 15px;
         }
 
-        /* Glass Icon Container */
-        .software-icon {
-            width: 54px;
-            height: 54px;
-            border-radius: 14px;
-            background: rgba(56, 189, 248, 0.12);
-            border: 1px solid rgba(56, 189, 248, 0.3);
+        /* Rich Software Icon Badge Container */
+        .software-badge {
+            width: 58px;
+            height: 58px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
-            color: var(--accent-blue);
             flex-shrink: 0;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+            padding: 10px;
+        }
+
+        .software-badge svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* Specific Brand Icon Badge Styles */
+        .badge-emu8086 {
+            background: linear-gradient(135deg, #0ea5e9, #0284c7);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .badge-8085 {
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .badge-office {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .badge-arduino {
+            background: linear-gradient(135deg, #0d9488, #059669);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .badge-matlab {
+            background: linear-gradient(135deg, #e11d48, #be123c);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .software-card h3 {
@@ -710,7 +740,9 @@
                 <div class="software-card">
                     <div>
                         <div class="software-header-box">
-                            <div class="software-icon"><i class="fa-solid fa-calculator"></i></div>
+                            <div class="software-badge badge-matlab">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19l4-14 4 14 4-14 4 14"/></svg>
+                            </div>
                             <div>
                                 <h3>MATLAB Control Systems</h3>
                                 <span class="software-reqs"><i class="fa-solid fa-laptop"></i> Simulation / Control</span>
@@ -726,7 +758,9 @@
                 <div class="software-card">
                     <div>
                         <div class="software-header-box">
-                            <div class="software-icon"><i class="fa-solid fa-wifi"></i></div>
+                            <div class="software-badge badge-arduino">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><line x1="6" y1="12" x2="10" y2="12"/><line x1="14" y1="12" x2="18" y2="12"/><line x1="16" y1="10" x2="16" y2="14"/></svg>
+                            </div>
                             <div>
                                 <h3>Wireless Power Receiver</h3>
                                 <span class="software-reqs"><i class="fa-solid fa-microchip"></i> 13.56 MHz WPT</span>
@@ -769,7 +803,9 @@
                 <div class="software-card">
                     <div>
                         <div class="software-header-box">
-                            <div class="software-icon"><i class="fa-solid fa-microchip"></i></div>
+                            <div class="software-badge badge-emu8086">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 15h3M1 9h3M1 15h3"/></svg>
+                            </div>
                             <div>
                                 <h3 data-key="soft-emu-title">emu8086 Microprocessor Emulator</h3>
                                 <span class="software-reqs"><i class="fa-brands fa-windows"></i> Win 7/10/11 | 8086 Assembly</span>
@@ -791,7 +827,9 @@
                 <div class="software-card">
                     <div>
                         <div class="software-header-box">
-                            <div class="software-icon"><i class="fa-solid fa-memory"></i></div>
+                            <div class="software-badge badge-8085">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 19v-3a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/><circle cx="12" cy="9" r="4"/><path d="M12 1v4M12 19v4M1 12h4M19 12h4"/></svg>
+                            </div>
                             <div>
                                 <h3 data-key="soft-8085-title">8085 Microprocessor Simulator</h3>
                                 <span class="software-reqs"><i class="fa-brands fa-windows"></i> Win 7/10/11 | 8085 Kit</span>
@@ -813,7 +851,9 @@
                 <div class="software-card">
                     <div>
                         <div class="software-header-box">
-                            <div class="software-icon"><i class="fa-solid fa-file-word"></i></div>
+                            <div class="software-badge badge-office">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                            </div>
                             <div>
                                 <h3 data-key="soft-office-title">Microsoft Office 365</h3>
                                 <span class="software-reqs"><i class="fa-brands fa-windows"></i> Win 10/11 | Online Installer</span>
@@ -835,7 +875,9 @@
                 <div class="software-card">
                     <div>
                         <div class="software-header-box">
-                            <div class="software-icon"><i class="fa-solid fa-microchip"></i></div>
+                            <div class="software-badge badge-arduino">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+                            </div>
                             <div>
                                 <h3 data-key="soft-2-title">Arduino & Nextion IDE Package</h3>
                                 <span class="software-reqs"><i class="fa-brands fa-windows"></i> Win 10/11 | RAM: 4GB</span>
@@ -857,7 +899,9 @@
                 <div class="software-card">
                     <div>
                         <div class="software-header-box">
-                            <div class="software-icon"><i class="fa-solid fa-calculator"></i></div>
+                            <div class="software-badge badge-matlab">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+                            </div>
                             <div>
                                 <h3 data-key="soft-1-title">MATLAB & Simulink Toolkits</h3>
                                 <span class="software-reqs"><i class="fa-solid fa-gear"></i> MATLAB R2022b+</span>
