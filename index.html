@@ -153,7 +153,7 @@
             box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
         }
 
-        /* Theme & Lang Toggle Buttons */
+        /* Controls */
         .control-btn {
             background: var(--btn-social-bg);
             border: 1px solid var(--card-border);
@@ -554,12 +554,6 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div>
-                        <h3><a href="https://github.com/ibrahimkhalilkamil/student-results" target="_blank" style="color: var(--accent-blue); text-decoration: none;">student-results</a></h3>
-                        <p data-key="repo-1-desc">Automated Python program designed for parsing unorganized academic Excel sheets and transferring scores into structured templates.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div>
                         <h3><a href="https://github.com/ibrahimkhalilkamil/MATLAB-Digital-Control-and-PID" target="_blank" style="color: var(--accent-blue); text-decoration: none;">MATLAB Control Systems</a></h3>
                         <p data-key="repo-2-desc">Digital control systems simulations, state-space representations, PID tuning models, and robustness analyses.</p>
                     </div>
@@ -642,7 +636,6 @@
             "skill-cat-3": "Embedded & Hardware",
             "skill-cat-4": "Prototyping & Design",
             "repos-title": "Featured Repositories & Systems",
-            "repo-1-desc": "Automated Python program designed for parsing unorganized academic Excel sheets and transferring scores into structured templates.",
             "repo-2-desc": "Digital control systems simulations, state-space representations, PID tuning models, and robustness analyses.",
             "repo-3-desc": "Hardware realization and embedded control code for a 13.56 MHz wireless power reception unit.",
             "affiliation-title": "Academic Affiliation & Identity",
@@ -673,7 +666,6 @@
             "skill-cat-3": "الأنظمة المدمجة والأجهزة",
             "skill-cat-4": "النمذجة والطباعة ثلاثية الأبعاد",
             "repos-title": "المستودعات والأنظمة المتميزة",
-            "repo-1-desc": "برنامج بايتون تلقائي يستخرج درجات الطلاب من جداول إكسيل غير المنسقة وينقلها إلى القوالب الرسمية.",
             "repo-2-desc": "نماذج محاكاة أنظمة التحكم الرقمي بالـ MATLAB، الفضاء الحالي، ضبط متحكمات PID، وتحليلات المتانة.",
             "repo-3-desc": "التصميم والتنفيذ العملي لدائرة استقبال الطاقة اللاسلكية بفرع 13.56 ميجاهرتز.",
             "affiliation-title": "الانتماء الأكاديمي والتوثيق",
@@ -714,7 +706,6 @@
         setLanguage(currentLang === 'en' ? 'ar' : 'en');
     });
 
-    // Initialize Language
     setLanguage(currentLang);
 
     // Tab Switcher Logic
