@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MSc. Ibrahim Khalil Kamil | إبراهيم خليل كامل</title>
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Official personal website and portfolio of MSc. Ibrahim Khalil Kamil. Lecturer at Al-Hadi University College, control systems engineer, and software developer.">
-    <meta name="keywords" content="Ibrahim Khalil Kamil, إبراهيم خليل كامل, Control Engineering, Al-Hadi University College, Google Scholar, ORCID, GitHub">
+    <meta name="description" content="Official personal website and portfolio of MSc. Ibrahim Khalil Kamil. Lecturer at Al-Hadi University College, control systems engineer, embedded developer, and 3D design specialist.">
+    <meta name="keywords" content="Ibrahim Khalil Kamil, إبراهيم خليل كامل, Control Engineering, MATLAB, C++, Python, Arduino, Nextion, TFT, Raspberry Pi, 3D Printing, Al-Hadi University College">
     <meta name="author" content="Ibrahim Khalil Kamil">
     
     <!-- Open Graph for Social Media Preview & Google Images -->
@@ -78,7 +78,6 @@
             background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
         }
 
-        /* Profile Image */
         .profile-img-container {
             position: relative;
             width: 160px;
@@ -124,7 +123,6 @@
             margin: 0 auto 30px auto;
         }
 
-        /* Badge Buttons */
         .social-grid {
             display: flex;
             justify-content: center;
@@ -186,6 +184,57 @@
             color: var(--accent-blue);
         }
 
+        /* Skills Grid Layout */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        .skill-category h3 {
+            font-size: 1.05rem;
+            color: var(--accent-blue);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .tag:hover {
+            background: rgba(56, 189, 248, 0.15);
+            border-color: var(--accent-blue);
+        }
+
         /* Repo Grid */
         .projects-grid {
             display: grid;
@@ -222,7 +271,6 @@
             font-size: 0.88rem;
         }
 
-        /* Contact Details */
         .contact-list p {
             margin-bottom: 10px;
             color: var(--text-secondary);
@@ -254,7 +302,7 @@
         <h2 class="hero-subtitle">إبراهيم خليل كامل</h2>
         <p class="hero-desc">
             Lecturer at Al-Hadi University College | Control & Systems Engineering Researcher.<br>
-            Specialized in Modeling & Simulation, Digital Control Systems, MATLAB Analysis, and Embedded Hardware (Arduino/IoT).
+            Specialized in Modeling & Simulation, Embedded Hardware Systems, and Software Development.
         </p>
 
         <div class="social-grid">
@@ -279,8 +327,57 @@
             <i class="fa-solid fa-microchip"></i> About & Research Focus
         </div>
         <p style="color: var(--text-secondary);">
-            Academic lecturer and systems researcher focusing on digital control theory, optimal dynamic control frameworks, and state-space systems. Experienced in implementing practical hardware realizations for wireless power transfer (WPT) operating at 13.56 MHz, smart embedded devices using Arduino/IoT, and scientific data manipulation via Python.
+            Academic lecturer and systems researcher focusing on digital control theory, dynamic system simulations, and embedded hardware development. Experienced in designing advanced user interfaces for embedded systems, prototyping physical 3D models, and implementing wireless power transfer (WPT) circuits.
         </p>
+    </div>
+
+    <!-- NEW: Skills & Tech Stack Section -->
+    <div class="glass-section">
+        <div class="section-header">
+            <i class="fa-solid fa-layer-group"></i> Skills & Tech Stack
+        </div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3><i class="fa-solid fa-code"></i> Programming & Web</h3>
+                <div class="skill-tags">
+                    <span class="tag">C++</span>
+                    <span class="tag">C</span>
+                    <span class="tag">C#</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">HTML5</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fa-solid fa-chart-line"></i> Simulation & Analysis</h3>
+                <div class="skill-tags">
+                    <span class="tag">MATLAB</span>
+                    <span class="tag">Simulink</span>
+                    <span class="tag">Control Systems</span>
+                    <span class="tag">System Modeling</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fa-solid fa-robot"></i> Embedded & Hardware</h3>
+                <div class="skill-tags">
+                    <span class="tag">Arduino</span>
+                    <span class="tag">Raspberry Pi</span>
+                    <span class="tag">Nextion Displays</span>
+                    <span class="tag">TFT Screens</span>
+                    <span class="tag">IoT Protocols</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3><i class="fa-solid fa-cubes"></i> Prototyping & Design</h3>
+                <div class="skill-tags">
+                    <span class="tag">3D Design & CAD</span>
+                    <span class="tag">3D Printing</span>
+                    <span class="tag">Hardware Prototyping</span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Featured Projects -->
