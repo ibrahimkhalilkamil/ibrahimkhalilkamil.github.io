@@ -5,24 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MSc. Ibrahim Khalil Kamil | إبراهيم خليل كامل</title>
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Official personal website and academic portfolio of MSc. Ibrahim Khalil Kamil. Lecturer at Al-Hadi University College, researcher in Control & Systems Engineering, Modeling, Simulation, and Embedded Systems.">
-    <meta name="keywords" content="Ibrahim Khalil Kamil, إبراهيم خليل كامل, Control Engineering, Digital Control, Al-Hadi University College, MATLAB, Arduino, IoT, Google Scholar, ORCID">
+    <meta name="description" content="Official personal website and portfolio of MSc. Ibrahim Khalil Kamil. Lecturer at Al-Hadi University College, control systems engineer, and software developer.">
+    <meta name="keywords" content="Ibrahim Khalil Kamil, إبراهيم خليل كامل, Control Engineering, Al-Hadi University College, Google Scholar, ORCID, GitHub">
     <meta name="author" content="Ibrahim Khalil Kamil">
     
-    <!-- Fonts and FontAwesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Open Graph for Social Media Preview & Google Images -->
+    <meta property="og:title" content="MSc. Ibrahim Khalil Kamil | Official Portfolio">
+    <meta property="og:description" content="Lecturer at Al-Hadi University College | Control & Systems Engineer">
+    <meta property="og:image" content="profile.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts & FontAwesome 6 -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
         :root {
-            --primary: #1e293b;
-            --accent: #2563eb;
-            --accent-hover: #1d4ed8;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #334155;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-blue: #38bdf8;
+            --accent-purple: #818cf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
         }
 
         * {
@@ -32,195 +38,282 @@
         }
 
         body {
-            font-family: 'Inter', 'Noto Sans Arabic', sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 20px;
+            font-family: 'Plus Jakarta Sans', 'Noto Sans Arabic', sans-serif;
+            background: #0b0f19;
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 40px 20px;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.12) 0px, transparent 50%);
+            background-attachment: fixed;
         }
 
         .container {
-            max-width: 900px;
-            margin: 40px auto;
+            max-width: 950px;
+            margin: 0 auto;
         }
 
-        .profile-card {
+        /* Profile Header Card */
+        .hero-card {
             background: var(--card-bg);
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--border);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 50px 40px;
             text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .profile-card h1 {
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 5px;
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
         }
 
-        .profile-card h2 {
-            font-size: 1.3rem;
-            font-weight: 400;
-            color: var(--accent);
-            margin-bottom: 15px;
-        }
-
-        .profile-card .tagline {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-            max-width: 700px;
+        /* Profile Image */
+        .profile-img-container {
+            position: relative;
+            width: 160px;
+            height: 160px;
             margin: 0 auto 25px auto;
         }
 
-        .badge-container {
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--accent-blue);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-card:hover .profile-img {
+            transform: scale(1.03);
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .hero-desc {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 720px;
+            margin: 0 auto 30px auto;
+        }
+
+        /* Badge Buttons */
+        .social-grid {
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 14px;
             flex-wrap: wrap;
-            margin-bottom: 25px;
         }
 
-        .badge-btn {
+        .social-btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 10px 18px;
-            border-radius: 8px;
+            gap: 10px;
+            padding: 12px 22px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.2s ease;
+            font-size: 0.92rem;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .btn-scholar { background-color: #4285f4; color: white; }
-        .btn-orcid { background-color: #a6ce39; color: white; }
-        .btn-github { background-color: #24292e; color: white; }
-
-        .badge-btn:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .section {
+        .btn-scholar:hover { background: #4285f4; border-color: #4285f4; }
+        .btn-orcid:hover { background: #a6ce39; border-color: #a6ce39; }
+        .btn-github:hover { background: #24292e; border-color: #6e7681; }
+        .btn-instagram:hover { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); border-color: #dc2743; }
+
+        /* Section Cards */
+        .glass-section {
             background: var(--card-bg);
-            border-radius: 16px;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
             padding: 35px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--border);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .section-title {
-            font-size: 1.4rem;
-            color: var(--primary);
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+        .section-header {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--card-border);
         }
 
-        .repo-grid {
+        .section-header i {
+            color: var(--accent-blue);
+        }
+
+        /* Repo Grid */
+        .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 18px;
         }
 
-        .repo-card {
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 20px;
-            transition: border-color 0.2s;
+        .project-card {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            padding: 22px;
+            transition: all 0.3s ease;
         }
 
-        .repo-card:hover {
-            border-color: var(--accent);
+        .project-card:hover {
+            border-color: var(--accent-blue);
+            background: rgba(15, 23, 42, 0.9);
+            transform: translateY(-2px);
         }
 
-        .repo-card h3 {
+        .project-card h3 {
             font-size: 1.1rem;
             margin-bottom: 8px;
         }
 
-        .repo-card h3 a {
-            color: var(--accent);
+        .project-card h3 a {
+            color: var(--accent-blue);
             text-decoration: none;
         }
 
-        .repo-card p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
+        .project-card p {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+        }
+
+        /* Contact Details */
+        .contact-list p {
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+        }
+
+        .contact-list strong {
+            color: var(--text-primary);
         }
 
         footer {
             text-align: center;
-            color: var(--text-muted);
+            color: var(--text-secondary);
             font-size: 0.85rem;
-            margin-top: 40px;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--card-border);
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- Header Section -->
-    <div class="profile-card">
-        <h1>MSc. Ibrahim Khalil Kamil</h1>
-        <h2>إبراهيم خليل كامل</h2>
-        <p class="tagline">
-            Lecturer at Al-Hadi University College | MSc Researcher in Control & Systems Engineering.<br>
-            Specialized in Modeling & Simulation, Digital Control Systems, MATLAB, and Embedded Hardware (Arduino/IoT).
+    <!-- Hero Header -->
+    <div class="hero-card">
+        <div class="profile-img-container">
+            <img src="profile.jpg" alt="Ibrahim Khalil Kamil - إبراهيم خليل كامل" class="profile-img">
+        </div>
+        <h1 class="hero-title">MSc. Ibrahim Khalil Kamil</h1>
+        <h2 class="hero-subtitle">إبراهيم خليل كامل</h2>
+        <p class="hero-desc">
+            Lecturer at Al-Hadi University College | Control & Systems Engineering Researcher.<br>
+            Specialized in Modeling & Simulation, Digital Control Systems, MATLAB Analysis, and Embedded Hardware (Arduino/IoT).
         </p>
 
-        <div class="badge-container">
-            <a href="https://scholar.google.com/citations?user=UT1IsdEAAAAJ&hl=ar" target="_blank" class="badge-btn btn-scholar">
+        <div class="social-grid">
+            <a href="https://scholar.google.com/citations?user=UT1IsdEAAAAJ&hl=ar" target="_blank" class="social-btn btn-scholar">
                 <i class="fa-solid fa-graduation-cap"></i> Google Scholar
             </a>
-            <a href="https://orcid.org/0009-0001-9884-8397" target="_blank" class="badge-btn btn-orcid">
-                <i class="fa-brands fa-orcid"></i> ORCID Profile
+            <a href="https://orcid.org/0009-0001-9884-8397" target="_blank" class="social-btn btn-orcid">
+                <i class="fa-brands fa-orcid"></i> ORCID
             </a>
-            <a href="https://github.com/ibrahimkhalilkamil" target="_blank" class="badge-btn btn-github">
-                <i class="fa-brands fa-github"></i> GitHub Profile
+            <a href="https://github.com/ibrahimkhalilkamil" target="_blank" class="social-btn btn-github">
+                <i class="fa-brands fa-github"></i> GitHub
+            </a>
+            <a href="https://www.instagram.com/i31_k/" target="_blank" class="social-btn btn-instagram">
+                <i class="fa-brands fa-instagram"></i> Instagram
             </a>
         </div>
     </div>
 
     <!-- About Section -->
-    <div class="section">
-        <h2 class="section-title"><i class="fa-solid fa-user-gear"></i> About & Specialization</h2>
-        <p>
-            Academic researcher and systems engineer focusing on control theory, optimal control frameworks, and digital control applications. Proficient in developing dynamic system simulations using MATLAB and building embedded power and sensing hardware using Arduino and IoT communication protocols.
+    <div class="glass-section">
+        <div class="section-header">
+            <i class="fa-solid fa-microchip"></i> About & Research Focus
+        </div>
+        <p style="color: var(--text-secondary);">
+            Academic lecturer and systems researcher focusing on digital control theory, optimal dynamic control frameworks, and state-space systems. Experienced in implementing practical hardware realizations for wireless power transfer (WPT) operating at 13.56 MHz, smart embedded devices using Arduino/IoT, and scientific data manipulation via Python.
         </p>
     </div>
 
-    <!-- Projects / Repositories -->
-    <div class="section">
-        <h2 class="section-title"><i class="fa-solid fa-code"></i> Featured Projects & Research</h2>
-        <div class="repo-grid">
-            <div class="repo-card">
+    <!-- Featured Projects -->
+    <div class="glass-section">
+        <div class="section-header">
+            <i class="fa-solid fa-code-branch"></i> Featured Repositories & Systems
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
                 <h3><a href="https://github.com/ibrahimkhalilkamil/student-results" target="_blank">student-results</a></h3>
-                <p>Python-based automated tool designed to parse unorganized student grade sheets and transfer scores into target templates.</p>
+                <p>Automated Python program designed for parsing unorganized academic Excel sheets and transferring scores into structured templates.</p>
             </div>
-            <div class="repo-card">
-                <h3><a href="https://github.com/ibrahimkhalilkamil/MATLAB-Digital-Control-and-PID" target="_blank">MATLAB Digital Control</a></h3>
-                <p>Digital control systems, state-space simulation models, PID tuning via Ziegler-Nichols, and robustness analysis.</p>
+            <div class="project-card">
+                <h3><a href="https://github.com/ibrahimkhalilkamil/MATLAB-Digital-Control-and-PID" target="_blank">MATLAB Control Systems</a></h3>
+                <p>Digital control systems simulations, state-space representations, PID tuning models, and robustness analyses.</p>
             </div>
-            <div class="repo-card">
+            <div class="project-card">
                 <h3><a href="https://github.com/ibrahimkhalilkamil/Arduino-Wireless-Power-Receiver" target="_blank">Wireless Power Receiver</a></h3>
-                <p>Design and hardware realization of a 13.56 MHz wireless power reception circuit for smart devices.</p>
+                <p>Hardware realization and embedded control code for a 13.56 MHz wireless power reception unit.</p>
             </div>
         </div>
     </div>
 
-    <!-- Contact & Institutional Info -->
-    <div class="section">
-        <h2 class="section-title"><i class="fa-solid fa-envelope"></i> Institutional & Contact Info</h2>
-        <p><strong>Affiliation:</strong> Al-Hadi University College (كلية الهادي الجامعة)</p>
-        <p><strong>Verified Academic Domain:</strong> huc.edu.iq</p>
-        <p><strong>GitHub Organization/User:</strong> <a href="https://github.com/ibrahimkhalilkamil" style="color: var(--accent);">@ibrahimkhalilkamil</a></p>
+    <!-- Institutional Info -->
+    <div class="glass-section">
+        <div class="section-header">
+            <i class="fa-solid fa-building-columns"></i> Academic Affiliation & Identity
+        </div>
+        <div class="contact-list">
+            <p><strong>Institution:</strong> Al-Hadi University College (كلية الهادي الجامعة)</p>
+            <p><strong>Verified Academic Domain:</strong> huc.edu.iq</p>
+            <p><strong>Official Handle:</strong> @ibrahimkhalilkamil</p>
+        </div>
     </div>
 
     <footer>
