@@ -391,24 +391,19 @@
             margin-bottom: 15px;
         }
 
-        /* Inline Custom Vector SVGs Container */
-        .software-icon-box {
-            width: 58px;
-            height: 58px;
-            border-radius: 16px;
-            background: rgba(56, 189, 248, 0.1);
-            border: 1px solid rgba(56, 189, 248, 0.25);
+        /* Glass Icon Container */
+        .software-icon {
+            width: 54px;
+            height: 54px;
+            border-radius: 14px;
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 10px;
+            font-size: 1.6rem;
+            color: var(--accent-blue);
             flex-shrink: 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .software-icon-box svg {
-            width: 100%;
-            height: 100%;
         }
 
         .software-card h3 {
@@ -715,9 +710,7 @@
                 <div class="software-card">
                     <div>
                         <div class="software-header-box">
-                            <div class="software-icon-box">
-                                <svg viewBox="0 0 128 128"><path fill="#E15C26" d="M12.5 90L35 30l22.5 45L80 15l35.5 90H12.5z"/><path fill="#D23727" d="M57.5 75L80 15l35.5 90H80z"/><path fill="#1270B8" d="M12.5 90l45-15L80 105z"/></svg>
-                            </div>
+                            <div class="software-icon"><i class="fa-solid fa-calculator"></i></div>
                             <div>
                                 <h3>MATLAB Control Systems</h3>
                                 <span class="software-reqs"><i class="fa-solid fa-laptop"></i> Simulation / Control</span>
@@ -733,9 +726,7 @@
                 <div class="software-card">
                     <div>
                         <div class="software-header-box">
-                            <div class="software-icon-box">
-                                <svg viewBox="0 0 128 128"><path fill="#00979D" d="M64 14C36.4 14 14 36.4 14 64s22.4 50 50 50 50-22.4 50-50S91.6 14 64 14zm-18 60c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm36 0c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15z"/><path fill="#FFF" d="M38 61h16v6H38zm36 0h16v6H74zm8-11h6v28h-6z"/></svg>
-                            </div>
+                            <div class="software-icon"><i class="fa-solid fa-wifi"></i></div>
                             <div>
                                 <h3>Wireless Power Receiver</h3>
                                 <span class="software-reqs"><i class="fa-solid fa-microchip"></i> 13.56 MHz WPT</span>
@@ -778,9 +769,7 @@
                 <div class="software-card">
                     <div>
                         <div class="software-header-box">
-                            <div class="software-icon-box">
-                                <svg viewBox="0 0 128 128"><rect x="28" y="28" width="72" height="72" rx="12" fill="#1E293B" stroke="#38BDF8" stroke-width="6"/><rect x="44" y="44" width="40" height="40" rx="6" fill="#38BDF8"/><path stroke="#38BDF8" stroke-width="5" stroke-linecap="round" d="M40 12v16M64 12v16M88 12v16M40 100v16M64 100v16M88 100v16M12 40h16M12 64h16M12 88h16M100 40h16M100 64h16M100 88h16"/></svg>
-                            </div>
+                            <div class="software-icon"><i class="fa-solid fa-microchip"></i></div>
                             <div>
                                 <h3 data-key="soft-emu-title">emu8086 Microprocessor Emulator</h3>
                                 <span class="software-reqs"><i class="fa-brands fa-windows"></i> Win 7/10/11 | 8086 Assembly</span>
@@ -802,9 +791,7 @@
                 <div class="software-card">
                     <div>
                         <div class="software-header-box">
-                            <div class="software-icon-box">
-                                <svg viewBox="0 0 128 128"><rect x="20" y="20" width="88" height="88" rx="10" fill="#0F172A" stroke="#818CF8" stroke-width="6"/><circle cx="64" cy="64" r="22" fill="#818CF8"/><path stroke="#818CF8" stroke-width="6" d="M64 20v22M64 86v22M20 64h22M86 64h22"/></svg>
-                            </div>
+                            <div class="software-icon"><i class="fa-solid fa-memory"></i></div>
                             <div>
                                 <h3 data-key="soft-8085-title">8085 Microprocessor Simulator</h3>
                                 <span class="software-reqs"><i class="fa-brands fa-windows"></i> Win 7/10/11 | 8085 Kit</span>
@@ -826,9 +813,7 @@
                 <div class="software-card">
                     <div>
                         <div class="software-header-box">
-                            <div class="software-icon-box">
-                                <svg viewBox="0 0 128 128"><path fill="#E63B00" d="M72 16l40 12v72l-40 12V16z"/><path fill="#FF8C00" d="M16 32l56-16v96L16 96V32z"/><path fill="#FFF" d="M34 50h20v28H34z"/></svg>
-                            </div>
+                            <div class="software-icon"><i class="fa-solid fa-file-word"></i></div>
                             <div>
                                 <h3 data-key="soft-office-title">Microsoft Office 365</h3>
                                 <span class="software-reqs"><i class="fa-brands fa-windows"></i> Win 10/11 | Online Installer</span>
@@ -850,9 +835,7 @@
                 <div class="software-card">
                     <div>
                         <div class="software-header-box">
-                            <div class="software-icon-box">
-                                <svg viewBox="0 0 128 128"><path fill="#00979D" d="M64 14C36.4 14 14 36.4 14 64s22.4 50 50 50 50-22.4 50-50S91.6 14 64 14zm-18 60c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15zm36 0c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15z"/><path fill="#FFF" d="M38 61h16v6H38zm36 0h16v6H74zm8-11h6v28h-6z"/></svg>
-                            </div>
+                            <div class="software-icon"><i class="fa-solid fa-microchip"></i></div>
                             <div>
                                 <h3 data-key="soft-2-title">Arduino & Nextion IDE Package</h3>
                                 <span class="software-reqs"><i class="fa-brands fa-windows"></i> Win 10/11 | RAM: 4GB</span>
@@ -874,9 +857,7 @@
                 <div class="software-card">
                     <div>
                         <div class="software-header-box">
-                            <div class="software-icon-box">
-                                <svg viewBox="0 0 128 128"><path fill="#E15C26" d="M12.5 90L35 30l22.5 45L80 15l35.5 90H12.5z"/><path fill="#D23727" d="M57.5 75L80 15l35.5 90H80z"/><path fill="#1270B8" d="M12.5 90l45-15L80 105z"/></svg>
-                            </div>
+                            <div class="software-icon"><i class="fa-solid fa-calculator"></i></div>
                             <div>
                                 <h3 data-key="soft-1-title">MATLAB & Simulink Toolkits</h3>
                                 <span class="software-reqs"><i class="fa-solid fa-gear"></i> MATLAB R2022b+</span>
@@ -920,7 +901,7 @@
 <div class="modal-overlay" id="modal-8085">
     <div class="modal-card">
         <button class="modal-close-btn" onclick="closeModal('modal-8085')"><i class="fa-solid fa-xmark"></i></button>
-        <h3 class="modal-title"><i class="fa-solid fa-microchip"></i> <span data-key="modal-8085-title">8085 Simulator Kit Setup</span></h3>
+        <h3 class="modal-title"><i class="fa-solid fa-memory"></i> <span data-key="modal-8085-title">8085 Simulator Kit Setup</span></h3>
         <ol class="modal-steps" data-key="modal-8085-steps">
             <li>Download `8085Setup.zip` and extract its contents.</li>
             <li>Navigate into the `8085 Setup` folder and execute `setup.exe`.</li>
