@@ -6,7 +6,7 @@
     <title>MSc. Ibrahim Khalil Kamil | إبراهيم خليل كامل</title>
     <!-- SEO Meta Tags -->
     <meta name="description" content="Official personal website and portfolio of MSc. Ibrahim Khalil Kamil. Lecturer at Al-Hadi University College, control systems engineer, embedded developer, and 3D design specialist.">
-    <meta name="keywords" content="Ibrahim Khalil Kamil, إبراهيم خليل كامل, Control Engineering, MATLAB, C++, Python, Arduino, Nextion, TFT, Raspberry Pi, 3D Printing, Al-Hadi University College">
+    <meta name="keywords" content="Ibrahim Khalil Kamil, إبراهيم خليل كامل, Control Engineering, MATLAB, C++, C#, Python, Arduino, Nextion, TFT, Raspberry Pi, 3D Printing, Al-Hadi University College">
     <meta name="author" content="Ibrahim Khalil Kamil">
     
     <!-- Open Graph for Social Media Preview & Google Images -->
@@ -235,7 +235,7 @@
             border-color: var(--accent-blue);
         }
 
-        /* Repo Grid */
+        /* Repo & Software Grid */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -248,6 +248,9 @@
             border-radius: 14px;
             padding: 22px;
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .project-card:hover {
@@ -259,16 +262,34 @@
         .project-card h3 {
             font-size: 1.1rem;
             margin-bottom: 8px;
-        }
-
-        .project-card h3 a {
             color: var(--accent-blue);
-            text-decoration: none;
         }
 
         .project-card p {
             color: var(--text-secondary);
             font-size: 0.88rem;
+            margin-bottom: 16px;
+        }
+
+        .dl-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-blue);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .dl-btn:hover {
+            background: var(--accent-blue);
+            color: #0b0f19;
         }
 
         .contact-list p {
@@ -331,7 +352,7 @@
         </p>
     </div>
 
-    <!-- NEW: Skills & Tech Stack Section -->
+    <!-- Skills & Tech Stack -->
     <div class="glass-section">
         <div class="section-header">
             <i class="fa-solid fa-layer-group"></i> Skills & Tech Stack
@@ -380,23 +401,67 @@
         </div>
     </div>
 
-    <!-- Featured Projects -->
+    <!-- Engineering Software & Academic Resources -->
+    <div class="glass-section">
+        <div class="section-header">
+            <i class="fa-solid fa-download"></i> Engineering Software & Academic Resources
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div>
+                    <h3><i class="fa-solid fa-calculator"></i> MATLAB & Simulink Resources</h3>
+                    <p>Curated simulation toolkits, control system models, and digital filter design packages for engineering coursework.</p>
+                </div>
+                <a href="https://github.com/ibrahimkhalilkamil/MATLAB-Digital-Control-and-PID" target="_blank" class="dl-btn">
+                    <i class="fa-solid fa-file-arrow-down"></i> Get Resources / Link
+                </a>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <h3><i class="fa-solid fa-microchip"></i> Arduino & Nextion IDE Tools</h3>
+                    <p>Development packages, HMI designer tools for Nextion displays, and essential library setups for embedded projects.</p>
+                </div>
+                <a href="https://github.com/ibrahimkhalilkamil" target="_blank" class="dl-btn">
+                    <i class="fa-solid fa-download"></i> Download Package
+                </a>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <h3><i class="fa-solid fa-file-excel"></i> Student Results Parser Tool</h3>
+                    <p>Standalone Python executable for automated grade extraction and spreadsheet formatting for university faculty.</p>
+                </div>
+                <a href="https://github.com/ibrahimkhalilkamil/student-results" target="_blank" class="dl-btn">
+                    <i class="fa-solid fa-box-archive"></i> Download Executable
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Repositories -->
     <div class="glass-section">
         <div class="section-header">
             <i class="fa-solid fa-code-branch"></i> Featured Repositories & Systems
         </div>
         <div class="projects-grid">
             <div class="project-card">
-                <h3><a href="https://github.com/ibrahimkhalilkamil/student-results" target="_blank">student-results</a></h3>
-                <p>Automated Python program designed for parsing unorganized academic Excel sheets and transferring scores into structured templates.</p>
+                <div>
+                    <h3><a href="https://github.com/ibrahimkhalilkamil/student-results" target="_blank" style="color: var(--accent-blue); text-decoration: none;">student-results</a></h3>
+                    <p>Automated Python program designed for parsing unorganized academic Excel sheets and transferring scores into structured templates.</p>
+                </div>
             </div>
             <div class="project-card">
-                <h3><a href="https://github.com/ibrahimkhalilkamil/MATLAB-Digital-Control-and-PID" target="_blank">MATLAB Control Systems</a></h3>
-                <p>Digital control systems simulations, state-space representations, PID tuning models, and robustness analyses.</p>
+                <div>
+                    <h3><a href="https://github.com/ibrahimkhalilkamil/MATLAB-Digital-Control-and-PID" target="_blank" style="color: var(--accent-blue); text-decoration: none;">MATLAB Control Systems</a></h3>
+                    <p>Digital control systems simulations, state-space representations, PID tuning models, and robustness analyses.</p>
+                </div>
             </div>
             <div class="project-card">
-                <h3><a href="https://github.com/ibrahimkhalilkamil/Arduino-Wireless-Power-Receiver" target="_blank">Wireless Power Receiver</a></h3>
-                <p>Hardware realization and embedded control code for a 13.56 MHz wireless power reception unit.</p>
+                <div>
+                    <h3><a href="https://github.com/ibrahimkhalilkamil/Arduino-Wireless-Power-Receiver" target="_blank" style="color: var(--accent-blue); text-decoration: none;">Wireless Power Receiver</a></h3>
+                    <p>Hardware realization and embedded control code for a 13.56 MHz wireless power reception unit.</p>
+                </div>
             </div>
         </div>
     </div>
